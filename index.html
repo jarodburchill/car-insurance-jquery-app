@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>Car Insurance Rates</title>
+        <!--jQuery-->
+        <script src="js/lib/jquery-2.1.4.js"></script>
+        <!--jQuery Mobile-->
+        <script src="js/lib/jquery.mobile-1.4.5.js"></script>
+        <!--jQuery Validator-->
+        <script src="js/lib/jquery.validate.js"></script>
+        <!--jQuery Mobile stylesheet-->
+        <link rel="stylesheet" type="text/css" href="css/lib/jquery.mobile-1.4.5.css">
+        <!--MyStyles-->
+        <link rel="stylesheet" type="text/css" href="css/jbMyStyle.css">
+        <!--MyScripts-->
+        <script src="js/global.js"></script>
+        <script src="js/util.js"></script>
+        <script src="js/facade.js"></script>
+
+    </head>
+    <body>
+        <!--Home page-->
+        <div id="pgHome" name="pgHome" data-role="page">
+            <header data-role="header" data-theme="b" data-position="fixed">
+                <h3>Safe-T Insurance</h3>
+            </header>
+            <div data-role="navbar" data-theme="a" data-iconpos="top">
+                <ul>
+                    <li><a href="#pgHome" data-icon="home" class="ui-btn-active ui-state-persist">Home</a></li>
+                    <li><a href="#pgAdd" data-icon="plus">Get Quote</a></li>
+                    <li><a href="#pgFind" data-icon="search">Find Quote</a></li>
+                    <li><a href="#pgSettings" data-icon="gear">Settings</a></li>
+                </ul>
+            </div>
+            <section data-role="content">
+                <h3 align="center">Safe-T Insurance</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias amet commodi distinctio, doloribus,
+                    ducimus illum magnam magni necessitatibus nostrum numquam perferendis quibusdam quis, quo quod rerum
+                    sit velit veniam. Ab adipisci atque commodi, culpa, eum exercitationem maiores, officiis placeat
+                    reiciendis reprehenderit repudiandae similique suscipit! Doloribus ducimus hic officiis placeat.
+                    <br>
+                </p>
+                <div align="center">
+                    <img src="img/car-red.png" style="width: 50%;">
+                </div>
+                <br>
+                <h3 align="center">Contact Us</h3>
+                <a href="tel:+15192828028" data-role="button" data-icon="phone" data-position="center">+1 (519)-282-8028</a>
+                <a href="mailto:jarodburchill@gmail.com" data-role="button" data-icon="mail" data-position="center">jarodburchill@gmail.com</a>
+            </section>
+            <footer data-role="footer" data-theme="b" data-position="fixed">
+                <h1> 2019 &copy; Jarod Burchill </h1>
+            </footer>
+        </div>
+        <!--Add page-->
+        <div id="pgAdd" name="pgAdd" data-role="page">
+            <header data-role="header" data-theme="b" data-position="fixed">
+                <h3>Safe-T Insurance</h3>
+            </header>
+            <div data-role="navbar" data-theme="a" data-iconpos="top">
+                <ul>
+                    <li><a href="#pgHome" data-icon="home">Home</a></li>
+                    <li><a href="#pgAdd" data-icon="plus" class="ui-btn-active ui-state-persist">Get Quote</a></li>
+                    <li><a href="#pgFind" data-icon="search">Find Quote</a></li>
+                    <li><a href="#pgSettings" data-icon="gear">Settings</a></li>
+                </ul>
+            </div>
+            <section data-role="content">
+                <h3 align="center">Add Policy Quote</h3>
+                <form id="frmAdd" name="frmAdd">
+                    <label for="txtName">Name:</label>
+                    <input type="text" id="txtName" name="txtName">
+                    <label for="txtAddress">Address:</label>
+                    <input type="text" id="txtAddress" name="txtAddress">
+                    <label for="txtCity">City:</label>
+                    <input type="text" id="txtCity" name="txtCity">
+                    <label for="txtPhone">Phone Number:</label>
+                    <input type="text" id="txtPhone" name="txtPhone">
+                    <label for="txtEmail">Email Address:</label>
+                    <input type="text" id="txtEmail" name="txtEmail">
+                    <label for="txtMake">Vehicle Make:</label>
+                    <input type="text" id="txtMake" name="txtMake">
+                    <label for="txtModel">Vehicle Model:</label>
+                    <input type="text" id="txtModel" name="txtModel">
+                    <label for="txtYear">Vehicle Year:</label>
+                    <input type="text" id="txtYear" name="txtYear"><br>
+                    <button type="button" id="btnGetQuote" name="btnGetQuote" data-theme="b">Get Quote</button>
+                </form>
+            </section>
+            <footer data-role="footer" data-theme="b" data-position="fixed">
+                <h1> 2019 &copy; Jarod Burchill </h1>
+            </footer>
+        </div>
+        <!--Display page-->
+        <div id="pgDisplay" name="pgDisplay" data-role="page">
+            <header data-role="header" data-theme="b" data-position="fixed">
+                <h3>Safe-T Insurance</h3>
+            </header>
+            <div data-role="navbar" data-theme="a" data-iconpos="top">
+                <ul>
+                    <li><a href="#pgHome" data-icon="home">Home</a></li>
+                    <li><a href="#pgAdd" data-icon="plus">Get Quote</a></li>
+                    <li><a href="#pgFind" data-icon="search">Find Quote</a></li>
+                    <li><a href="#pgSettings" data-icon="gear">Settings</a></li>
+                </ul>
+            </div>
+            <section data-role="content">
+                <h3 align="center">Display Policy Quote</h3><br>
+                <ul id="lvLastQuote" data-role="listview">
+                    <!-- Dynamically created in facade.js -->
+                </ul>
+            </section>
+            <footer data-role="footer" data-theme="b" data-position="fixed">
+                <h1> 2019 &copy; Jarod Burchill </h1>
+            </footer>
+        </div>
+        <!--Find page-->
+        <div id="pgFind" name="pgFind" data-role="page">
+            <header data-role="header" data-theme="b" data-position="fixed">
+                <h3>Safe-T Insurance</h3>
+            </header>
+            <div data-role="navbar" data-theme="a" data-iconpos="top">
+                <ul>
+                    <li><a href="#pgHome" data-icon="home">Home</a></li>
+                    <li><a href="#pgAdd" data-icon="plus">Get Quote</a></li>
+                    <li><a href="#pgFind" data-icon="search" class="ui-btn-active ui-state-persist">Find Quote</a></li>
+                    <li><a href="#pgSettings" data-icon="gear">Settings</a></li>
+                </ul>
+            </div>
+            <section data-role="content">
+                <h3 align="center">Find Policy Quote</h3><br>
+                <ul id="lvAllQuotes" data-role="listview">
+                    <!-- Dynamically created in facade.js -->
+                </ul>
+            </section>
+            <footer data-role="footer" data-theme="b" data-position="fixed">
+                <h1> 2019 &copy; Jarod Burchill </h1>
+            </footer>
+        </div>
+        <!--Settings page-->
+        <div id="pgSettings" name="pgSettings" data-role="page">
+            <header data-role="header" data-theme="b" data-position="fixed">
+                <h3>Safe-T Insurance</h3>
+            </header>
+            <div data-role="navbar" data-theme="a" data-iconpos="top">
+                <ul>
+                    <li><a href="#pgHome" data-icon="home">Home</a></li>
+                    <li><a href="#pgAdd" data-icon="plus">Get Quote</a></li>
+                    <li><a href="#pgFind" data-icon="search">Find Quote</a></li>
+                    <li><a href="#pgSettings" data-icon="gear" class="ui-btn-active ui-state-persist">Settings</a></li>
+                </ul>
+            </div>
+            <section data-role="content">
+                <h3 align="center">Settings</h3>
+                <button type="button" id="btnClearDatabase" name="btnClearDatabase" data-theme="b">Clear Database</button>
+            </section>
+            <footer data-role="footer" data-theme="b" data-position="fixed">
+                <h1> 2019 &copy; Jarod Burchill </h1>
+            </footer>
+        </div>
+    </body>
+</html>
