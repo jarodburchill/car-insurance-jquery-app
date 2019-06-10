@@ -1,2 +1,2 @@
 # CarInsuranceWebApp
-https://jarodburchill.github.io/CarInsuranceWebApp/
+GitHub Pages: https://jarodburchill.github.io/CarInsuranceWebApp/
